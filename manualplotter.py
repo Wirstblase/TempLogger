@@ -5,6 +5,7 @@ from time import sleep
 def savePlot():
     x = []
     y = []
+    yfl = []
     today = str(datetime.datetime.now().strftime(" %d/%m/%Y"))
 
     file1 = str(__file__)
@@ -18,12 +19,18 @@ def savePlot():
     y = y_file.read().split(',')
     y_file.close()
 
+    for i in y:
+        yfl.append(float(i))
+
+    #print(y)
+    #print(yfl)
+
     if(len(x) != len(y)):
         print("file item count error!")
 
     plt.figure(figsize=(18,8))
 
-    plt.plot(x,y)
+    plt.plot(x,yfl)
     plt.xlabel('time', color='#1e8bc3')
     plt.ylabel('temperature (°C)', color='#e74c3c')
     plt.title(('living room temp'+today), color='#34495e')

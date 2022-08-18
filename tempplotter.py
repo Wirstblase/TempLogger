@@ -6,6 +6,7 @@ import os
 def savePlot():
     x = []
     y = []
+    yfl = []
     today = str(datetime.datetime.now().strftime(" %d/%m/%Y"))
 
     file1 = str(__file__)
@@ -22,9 +23,12 @@ def savePlot():
     if(len(x) != len(y)):
         print("file item count error!")
 
+    for i in y:
+        yfl.append(float(i))
+
     plt.figure(figsize=(18,8))
 
-    plt.plot(x,y)
+    plt.plot(x,yfl)
     plt.xlabel('time', color='#1e8bc3')
     plt.ylabel('temperature (°C)', color='#e74c3c')
     plt.title(('living room temp'+today), color='#34495e')
@@ -38,16 +42,20 @@ def savePlot():
     savepath = file2 + year + "\\" + month + "\\" + day + fileformat
     plt.savefig(savepath)
 
+print("welcome! temp plotting started (plots at the end of each day)")
+
 while True:
     now = datetime.datetime.now()
     hour = now.strftime("%H")
     minute = now.strftime("%M")
     #print("hour:"+hour+" minute:"+minute)
-    sleep(10)
 
     if(hour == "23"):
         if(minute == "58"):
             savePlot()
             print("plot saved on:"+str(now))
+
+    sleep(10)
+
 
     

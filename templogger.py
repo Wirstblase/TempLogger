@@ -5,7 +5,7 @@ serialPort = serial.Serial(port = "COM4", baudrate=115200,
                            bytesize=8, timeout=200, stopbits=serial.STOPBITS_ONE)
 
 hour = ""
-previousHour = "05" # make this show the actual previous hour of the current time
+previousHour = "06" # make this show the actual previous hour of the current time
 # implemented = false !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 averageList = []
@@ -97,6 +97,7 @@ while True:
             appendTemp(average1)
             appendHour(previousHour)
             previousHour = hour
+            averageList = []
 
     if(minute == "01"):
         if(hour == "00"):
