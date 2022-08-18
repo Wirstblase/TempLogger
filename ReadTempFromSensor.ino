@@ -1,6 +1,7 @@
 /*
     using chinese clone of arduino nano
     MPU6050 sensor hooked up to arduino nano over i2c bus
+    arduino nano hooked up to PC via USB cable
 */
 
 #include <Wire.h>
