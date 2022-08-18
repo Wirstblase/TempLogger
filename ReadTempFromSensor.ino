@@ -1,5 +1,6 @@
 /*
-    MPU6050 sensor hooked up over i2c bus
+    using chinese clone of arduino nano
+    MPU6050 sensor hooked up to arduino nano over i2c bus
 */
 
 #include <Wire.h>
