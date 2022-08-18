@@ -1,5 +1,5 @@
 # TempLogger
-a small python application that neatly logs my room's ambient temperature throughout the day, plots it into a graph and saves it as a PDF file, every day
+a small python application that neatly logs my room's ambient temperature throughout the day, plots it on graph and saves it as a PDF file, every day
 
 !important!
 before running the program, make sure to create a folder named "2022" or the current year you're running the program in, in which you must create a folder for each month of the year, eg: "01" , "02" , "03" etc...
